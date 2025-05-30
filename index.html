@@ -1,37 +1,587 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FotonFold</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
-    header { background: #4CAF50; color: #fff; padding: 20px 0; text-align: center; }
-    .container { max-width: 800px; margin: 30px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    h1 { margin-top: 0; }
-    p { line-height: 1.6; }
-    a.button { display: inline-block; margin-top: 20px; padding: 12px 24px; background: #4CAF50; color: #fff; text-decoration: none; border-radius: 4px; }
-    a.button:hover { background: #45a049; }
-    footer { text-align: center; padding: 10px 0; color: #777; font-size: 0.9em; }
+  <title>FotonFold - 科技精品购物平台</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#165DFF',
+            secondary: '#FF7D00',
+            dark: '#1D2129',
+            light: '#F2F3F5',
+          },
+          fontFamily: {
+            inter: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .card-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+      }
+    }
   </style>
 </head>
-<body>
-  <header>
-    <h1>FotonFold</h1>
+<body class="font-inter bg-light text-dark">
+  <!-- 顶部导航 -->
+  <header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-2">
+          <span class="text-primary text-2xl font-bold">FotonFold</span>
+        </a>
+        
+        <!-- 导航菜单 - 桌面版 -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#" class="text-dark hover:text-primary transition-colors font-medium">首页</a>
+          <a href="#products" class="text-dark hover:text-primary transition-colors font-medium">商品分类</a>
+          <a href="#featured" class="text-dark hover:text-primary transition-colors font-medium">热销产品</a>
+          <a href="#about" class="text-dark hover:text-primary transition-colors font-medium">关于我们</a>
+        </nav>
+        
+        <!-- 用户操作区 -->
+        <div class="flex items-center space-x-4">
+          <a href="#" class="text-dark hover:text-primary transition-colors">
+            <i class="fa fa-search text-lg"></i>
+          </a>
+          <a href="#" class="text-dark hover:text-primary transition-colors">
+            <i class="fa fa-user text-lg"></i>
+          </a>
+          <a href="#" class="relative text-dark hover:text-primary transition-colors">
+            <i class="fa fa-shopping-cart text-lg"></i>
+            <span class="absolute -top-2 -right-2 bg-secondary text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+          </a>
+          <!-- 移动端菜单按钮 -->
+          <button id="mobile-menu-button" class="md:hidden text-dark hover:text-primary transition-colors">
+            <i class="fa fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 移动端菜单 -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+      <div class="container mx-auto px-4 py-3 space-y-2">
+        <a href="#" class="block py-2 text-dark hover:text-primary transition-colors">首页</a>
+        <a href="#products" class="block py-2 text-dark hover:text-primary transition-colors">商品分类</a>
+        <a href="#featured" class="block py-2 text-dark hover:text-primary transition-colors">热销产品</a>
+        <a href="#about" class="block py-2 text-dark hover:text-primary transition-colors">关于我们</a>
+      </div>
+    </div>
   </header>
-  <div class="container">
-    <h1>Welcome!</h1>
-<!--     <p>This is a simple placeholder page to showcase your online presence. You can use this page as your "store URL" when registering Payoneer or showcasing your business.</p> -->
-    <h2>About Me / Business</h2>
-<!--     <p>Write a short paragraph about yourself or your services. For example:</p> -->
-    <blockquote>
-      "We specialize in domain trading and digital services, offering fast and reliable transactions."  
-    </blockquote>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:3121975199@qq.com"></a></p>
-  </div>
-  <footer>
-    &copy; 2025 Your Name or Brand. All rights reserved.
+
+  <main>
+    <!-- 轮播图 -->
+    <section class="relative bg-primary overflow-hidden">
+      <div class="container mx-auto px-4 py-16 md:py-24">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="text-white">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-shadow mb-4">
+              探索科技<br>引领未来生活
+            </h1>
+            <p class="text-lg md:text-xl mb-8 max-w-lg">
+              发现最新、最酷的电子产品，享受科技带来的便捷与乐趣。
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="#products" class="bg-secondary hover:bg-secondary/90 text-white font-medium px-6 py-3 rounded-lg transition-colors">
+                立即购买
+              </a>
+              <a href="#featured" class="bg-white/20 hover:bg-white/30 text-white font-medium px-6 py-3 rounded-lg transition-colors">
+                了解更多
+              </a>
+            </div>
+          </div>
+          <div class="relative">
+            <img src="https://picsum.photos/id/160/600/400" alt="最新电子产品展示" class="w-full h-auto rounded-lg shadow-2xl transform md:rotate-3 hover:rotate-0 transition-transform duration-500">
+            <div class="absolute -bottom-4 -right-4 bg-secondary text-white text-sm font-bold px-4 py-2 rounded-lg shadow-lg">
+              限时优惠
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 装饰波浪 -->
+      <div class="absolute bottom-0 left-0 w-full">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" class="w-full h-auto">
+          <path fill="#F2F3F5" fill-opacity="1" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,53.3C672,53,768,75,864,74.7C960,75,1056,53,1152,48C1248,43,1344,53,1392,58.7L1440,64L1440,100L1392,100C1344,100,1248,100,1152,100C1056,100,960,100,864,100C768,100,672,100,576,100C480,100,384,100,288,100C192,100,96,100,48,100L0,100Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 分类导航 -->
+    <section id="products" class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">热门分类</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <a href="#" class="card-hover bg-white rounded-xl shadow-md p-4 flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+              <i class="fa fa-laptop text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-medium">笔记本电脑</h3>
+          </a>
+          <a href="#" class="card-hover bg-white rounded-xl shadow-md p-4 flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+              <i class="fa fa-mobile text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-medium">智能手机</h3>
+          </a>
+          <a href="#" class="card-hover bg-white rounded-xl shadow-md p-4 flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+              <i class="fa fa-headphones text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-medium">音频设备</h3>
+          </a>
+          <a href="#" class="card-hover bg-white rounded-xl shadow-md p-4 flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3">
+              <i class="fa fa-camera text-primary text-2xl"></i>
+            </div>
+            <h3 class="font-medium">摄影器材</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 热销产品 -->
+    <section id="featured" class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-3xl font-bold">热销产品</h2>
+          <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
+            查看全部 <i class="fa fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- 产品卡片 1 -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+            <div class="relative">
+              <img src="https://picsum.photos/id/160/400/300" alt="超薄笔记本电脑" class="w-full h-48 object-cover">
+              <div class="absolute top-2 right-2 bg-secondary text-white text-xs font-bold px-2 py-1 rounded">
+                热销
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-medium text-lg">UltraBook Pro</h3>
+                <div class="flex text-yellow-400">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-half-o"></i>
+                </div>
+              </div>
+              <p class="text-gray-600 text-sm mb-3">13.3英寸超薄笔记本电脑，轻巧便携，性能强劲</p>
+              <div class="flex justify-between items-center">
+                <span class="text-primary font-bold text-xl">¥5,999</span>
+                <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-full transition-colors">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 产品卡片 2 -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+            <div class="relative">
+              <img src="https://picsum.photos/id/96/400/300" alt="智能手机" class="w-full h-48 object-cover">
+              <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                新品
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-medium text-lg">SmartPhone X</h3>
+                <div class="flex text-yellow-400">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-o"></i>
+                </div>
+              </div>
+              <p class="text-gray-600 text-sm mb-3">6.7英寸全面屏，5000mAh电池，超清拍照</p>
+              <div class="flex justify-between items-center">
+                <span class="text-primary font-bold text-xl">¥4,299</span>
+                <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-full transition-colors">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 产品卡片 3 -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+            <div class="relative">
+              <img src="https://picsum.photos/id/119/400/300" alt="无线耳机" class="w-full h-48 object-cover">
+              <div class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">
+                优惠
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-medium text-lg">Wireless Pro</h3>
+                <div class="flex text-yellow-400">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+              <p class="text-gray-600 text-sm mb-3">主动降噪无线耳机，HiFi音质，IP54防水</p>
+              <div class="flex justify-between items-center">
+                <div>
+                  <span class="text-primary font-bold text-xl">¥899</span>
+                  <span class="text-gray-400 line-through text-sm ml-2">¥1,299</span>
+                </div>
+                <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-full transition-colors">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 产品卡片 4 -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+            <div class="relative">
+              <img src="https://picsum.photos/id/100/400/300" alt="智能手表" class="w-full h-48 object-cover">
+            </div>
+            <div class="p-4">
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-medium text-lg">SmartWatch 3</h3>
+                <div class="flex text-yellow-400">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-o"></i>
+                  <i class="fa fa-star-o"></i>
+                </div>
+              </div>
+              <p class="text-gray-600 text-sm mb-3">多功能智能手表，健康监测，运动追踪</p>
+              <div class="flex justify-between items-center">
+                <span class="text-primary font-bold text-xl">¥1,499</span>
+                <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-full transition-colors">
+                  <i class="fa fa-shopping-cart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 促销横幅 -->
+    <section class="py-16 bg-primary relative overflow-hidden">
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-2xl">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">限时特惠活动</h2>
+          <p class="text-white/90 text-lg mb-8">全场商品8折起，新用户注册即送200元优惠券，数量有限，先到先得！</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#" class="bg-white text-primary hover:bg-white/90 font-medium px-6 py-3 rounded-lg transition-colors">
+              立即抢购
+            </a>
+            <a href="#" class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-medium px-6 py-3 rounded-lg transition-colors">
+              了解详情
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- 装饰图形 -->
+      <div class="absolute -top-10 -right-10 w-64 h-64 bg-white/10 rounded-full"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-white/10 rounded-full"></div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <img src="https://picsum.photos/id/180/600/400" alt="关于我们" class="w-full h-auto rounded-xl shadow-lg">
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold mb-4">关于 FotonFold</h2>
+            <p class="text-gray-700 mb-4">
+              FotonFold 成立于2018年，是一家专注于高品质电子产品销售的电商平台。我们致力于为消费者提供最新、最好的科技产品，让每个人都能享受科技带来的便捷与乐趣。
+            </p>
+            <p class="text-gray-700 mb-6">
+              我们的使命是通过技术创新和优质服务，连接人与科技，创造更美好的未来生活。我们与全球知名品牌合作，确保产品的品质和售后服务。
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex items-center">
+                <i class="fa fa-check-circle text-primary text-xl mr-2"></i>
+                <span>正品保障</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fa fa-check-circle text-primary text-xl mr-2"></i>
+                <span>7天无理由退换</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fa fa-check-circle text-primary text-xl mr-2"></i>
+                <span>专业售后团队</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fa fa-check-circle text-primary text-xl mr-2"></i>
+                <span>全国联保</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 客户评价 -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">客户评价</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- 评价 1 -->
+          <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+            <div class="flex text-yellow-400 mb-3">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "购买的笔记本电脑性能非常出色，轻薄便携，续航也很长。客服态度很好，解答了我很多问题，非常满意这次购物体验！"
+            </p>
+            <div class="flex items-center">
+              <img src="https://picsum.photos/id/64/100/100" alt="用户头像" class="w-12 h-12 rounded-full object-cover mr-3">
+              <div>
+                <h4 class="font-medium">张先生</h4>
+                <p class="text-gray-500 text-sm">2025年5月20日</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 评价 2 -->
+          <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+            <div class="flex text-yellow-400 mb-3">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half-o"></i>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "无线耳机音质很棒，降噪效果也很好，长时间佩戴也不会感到不适。物流速度很快，包装也很精美，值得推荐！"
+            </p>
+            <div class="flex items-center">
+              <img src="https://picsum.photos/id/65/100/100" alt="用户头像" class="w-12 h-12 rounded-full object-cover mr-3">
+              <div>
+                <h4 class="font-medium">李女士</h4>
+                <p class="text-gray-500 text-sm">2025年5月15日</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 评价 3 -->
+          <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+            <div class="flex text-yellow-400 mb-3">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "智能手表功能很全面，健康监测很准确，外观也很时尚。唯一不足的是电池续航有点短，不过总体来说还是很满意的。"
+            </p>
+            <div class="flex items-center">
+              <img src="https://picsum.photos/id/91/100/100" alt="用户头像" class="w-12 h-12 rounded-full object-cover mr-3">
+              <div>
+                <h4 class="font-medium">王先生</h4>
+                <p class="text-gray-500 text-sm">2025年5月8日</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 订阅区域 -->
+    <section class="py-16 bg-primary">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-white mb-4">订阅我们的新闻资讯</h2>
+        <p class="text-white/90 mb-8 max-w-2xl mx-auto">
+          及时获取最新产品信息、促销活动和科技资讯
+        </p>
+        <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+          <input type="email" placeholder="输入您的邮箱地址" class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white">
+          <button type="submit" class="bg-secondary hover:bg-secondary/90 text-white font-medium px-6 py-3 rounded-lg transition-colors">
+            立即订阅
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white pt-12 pb-6">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">FotonFold</h3>
+          <p class="text-gray-400 mb-4">
+            连接人与科技，创造美好未来
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">快速链接</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+            <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">商品分类</a></li>
+            <li><a href="#featured" class="text-gray-400 hover:text-white transition-colors">热销产品</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">客户服务</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">配送政策</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">退换货政策</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">隐私政策</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">用户协议</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold mb-4">联系我们</h4>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <i class="fa fa-map-marker mt-1 mr-3 text-gray-400"></i>
+              <span class="text-gray-400">北京市海淀区中关村科技园区8号楼</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-phone mr-3 text-gray-400"></i>
+              <span class="text-gray-400">400-888-8888</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fa fa-envelope mr-3 text-gray-400"></i>
+              <span class="text-gray-400">support@fotonfold.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-500 text-sm mb-4 md:mb-0">
+            &copy; 2025 FotonFold. 保留所有权利.
+          </p>
+          <div class="flex space-x-4">
+            <img src="https://picsum.photos/id/180/50/30" alt="支付方式" class="h-8 w-auto rounded">
+            <img src="https://picsum.photos/id/181/50/30" alt="支付方式" class="h-8 w-auto rounded">
+            <img src="https://picsum.photos/id/182/50/30" alt="支付方式" class="h-8 w-auto rounded">
+            <img src="https://picsum.photos/id/183/50/30" alt="支付方式" class="h-8 w-auto rounded">
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <!-- 回到顶部按钮 -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary hover:bg-primary/90 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // 移动端菜单切换
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // 回到顶部按钮
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+        backToTopButton.classList.add('opacity-100', 'visible');
+      } else {
+        backToTopButton.classList.add('opacity-0', 'invisible');
+        backToTopButton.classList.remove('opacity-100', 'visible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          // 关闭移动菜单（如果打开）
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+          }
+          
+          // 滚动到目标位置
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
