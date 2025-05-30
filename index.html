@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FotonFold - 科技精品购物平台</title>
+  <title>FotonFold - Premium Tech Shopping Platform</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <script>
@@ -49,7 +49,7 @@
   </style>
 </head>
 <body class="font-inter bg-light text-dark">
-  <!-- 顶部导航 -->
+  <!-- Top Navigation -->
   <header class="sticky top-0 z-50 bg-white shadow-md">
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between h-16">
@@ -58,15 +58,15 @@
           <span class="text-primary text-2xl font-bold">FotonFold</span>
         </a>
         
-        <!-- 导航菜单 - 桌面版 -->
+        <!-- Desktop Navigation -->
         <nav class="hidden md:flex space-x-8">
-          <a href="#" class="text-dark hover:text-primary transition-colors font-medium">首页</a>
-          <a href="#products" class="text-dark hover:text-primary transition-colors font-medium">商品分类</a>
-          <a href="#featured" class="text-dark hover:text-primary transition-colors font-medium">热销产品</a>
-          <a href="#about" class="text-dark hover:text-primary transition-colors font-medium">关于我们</a>
+          <a href="#" class="text-dark hover:text-primary transition-colors font-medium">Home</a>
+          <a href="#products" class="text-dark hover:text-primary transition-colors font-medium">Categories</a>
+          <a href="#featured" class="text-dark hover:text-primary transition-colors font-medium">Featured</a>
+          <a href="#about" class="text-dark hover:text-primary transition-colors font-medium">About</a>
         </nav>
         
-        <!-- 用户操作区 -->
+        <!-- User Actions -->
         <div class="flex items-center space-x-4">
           <a href="#" class="text-dark hover:text-primary transition-colors">
             <i class="fa fa-search text-lg"></i>
@@ -78,7 +78,7 @@
             <i class="fa fa-shopping-cart text-lg"></i>
             <span class="absolute -top-2 -right-2 bg-secondary text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
           </a>
-          <!-- 移动端菜单按钮 -->
+          <!-- Mobile Menu Button -->
           <button id="mobile-menu-button" class="md:hidden text-dark hover:text-primary transition-colors">
             <i class="fa fa-bars text-xl"></i>
           </button>
@@ -86,47 +86,47 @@
       </div>
     </div>
     
-    <!-- 移动端菜单 -->
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
       <div class="container mx-auto px-4 py-3 space-y-2">
-        <a href="#" class="block py-2 text-dark hover:text-primary transition-colors">首页</a>
-        <a href="#products" class="block py-2 text-dark hover:text-primary transition-colors">商品分类</a>
-        <a href="#featured" class="block py-2 text-dark hover:text-primary transition-colors">热销产品</a>
-        <a href="#about" class="block py-2 text-dark hover:text-primary transition-colors">关于我们</a>
+        <a href="#" class="block py-2 text-dark hover:text-primary transition-colors">Home</a>
+        <a href="#products" class="block py-2 text-dark hover:text-primary transition-colors">Categories</a>
+        <a href="#featured" class="block py-2 text-dark hover:text-primary transition-colors">Featured</a>
+        <a href="#about" class="block py-2 text-dark hover:text-primary transition-colors">About</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- 轮播图 -->
+    <!-- Hero Section -->
     <section class="relative bg-primary overflow-hidden">
       <div class="container mx-auto px-4 py-16 md:py-24">
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div class="text-white">
             <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-shadow mb-4">
-              探索科技<br>引领未来生活
+              Explore Technology<br>Lead Future Life
             </h1>
             <p class="text-lg md:text-xl mb-8 max-w-lg">
-              发现最新、最酷的电子产品，享受科技带来的便捷与乐趣。
+              Discover the latest and coolest electronic products and enjoy the convenience and fun brought by technology.
             </p>
             <div class="flex flex-wrap gap-4">
               <a href="#products" class="bg-secondary hover:bg-secondary/90 text-white font-medium px-6 py-3 rounded-lg transition-colors">
-                立即购买
+                Shop Now
               </a>
               <a href="#featured" class="bg-white/20 hover:bg-white/30 text-white font-medium px-6 py-3 rounded-lg transition-colors">
-                了解更多
+                Learn More
               </a>
             </div>
           </div>
           <div class="relative">
-            <img src="https://picsum.photos/id/160/600/400" alt="最新电子产品展示" class="w-full h-auto rounded-lg shadow-2xl transform md:rotate-3 hover:rotate-0 transition-transform duration-500">
+            <img src="https://picsum.photos/id/160/600/400" alt="Latest electronic products" class="w-full h-auto rounded-lg shadow-2xl transform md:rotate-3 hover:rotate-0 transition-transform duration-500">
             <div class="absolute -bottom-4 -right-4 bg-secondary text-white text-sm font-bold px-4 py-2 rounded-lg shadow-lg">
-              限时优惠
+              Limited Time Offer
             </div>
           </div>
         </div>
       </div>
-      <!-- 装饰波浪 -->
+      <!-- Decorative Wave -->
       <div class="absolute bottom-0 left-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" class="w-full h-auto">
           <path fill="#F2F3F5" fill-opacity="1" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,53.3C672,53,768,75,864,74.7C960,75,1056,53,1152,48C1248,43,1344,53,1392,58.7L1440,64L1440,100L1392,100C1344,100,1248,100,1152,100C1056,100,960,100,864,100C768,100,672,100,576,100C480,100,384,100,288,100C192,100,96,100,48,100L0,100Z"></path>
@@ -134,56 +134,56 @@
       </div>
     </section>
 
-    <!-- 分类导航 -->
+    <!-- Categories -->
     <section id="products" class="py-12">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-8 text-center">热门分类</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center">Popular Categories</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           <a href="#" class="card-hover bg-white rounded-xl shadow-md p-4 flex flex-col items-center text-center">
             <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3">
               <i class="fa fa-laptop text-primary text-2xl"></i>
             </div>
-            <h3 class="font-medium">笔记本电脑</h3>
+            <h3 class="font-medium">Laptops</h3>
           </a>
           <a href="#" class="card-hover bg-white rounded-xl shadow-md p-4 flex flex-col items-center text-center">
             <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3">
               <i class="fa fa-mobile text-primary text-2xl"></i>
             </div>
-            <h3 class="font-medium">智能手机</h3>
+            <h3 class="font-medium">Smartphones</h3>
           </a>
           <a href="#" class="card-hover bg-white rounded-xl shadow-md p-4 flex flex-col items-center text-center">
             <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3">
               <i class="fa fa-headphones text-primary text-2xl"></i>
             </div>
-            <h3 class="font-medium">音频设备</h3>
+            <h3 class="font-medium">Audio Devices</h3>
           </a>
           <a href="#" class="card-hover bg-white rounded-xl shadow-md p-4 flex flex-col items-center text-center">
             <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3">
               <i class="fa fa-camera text-primary text-2xl"></i>
             </div>
-            <h3 class="font-medium">摄影器材</h3>
+            <h3 class="font-medium">Photography</h3>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 热销产品 -->
+    <!-- Featured Products -->
     <section id="featured" class="py-12 bg-gray-50">
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center mb-8">
-          <h2 class="text-3xl font-bold">热销产品</h2>
+          <h2 class="text-3xl font-bold">Featured Products</h2>
           <a href="#" class="text-primary hover:text-primary/80 font-medium flex items-center">
-            查看全部 <i class="fa fa-arrow-right ml-2"></i>
+            View All <i class="fa fa-arrow-right ml-2"></i>
           </a>
         </div>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <!-- 产品卡片 1 -->
+          <!-- Product Card 1 -->
           <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
             <div class="relative">
-              <img src="https://picsum.photos/id/160/400/300" alt="超薄笔记本电脑" class="w-full h-48 object-cover">
+              <img src="https://picsum.photos/id/160/400/300" alt="Ultra-thin Laptop" class="w-full h-48 object-cover">
               <div class="absolute top-2 right-2 bg-secondary text-white text-xs font-bold px-2 py-1 rounded">
-                热销
+                Hot
               </div>
             </div>
             <div class="p-4">
@@ -197,7 +197,7 @@
                   <i class="fa fa-star-half-o"></i>
                 </div>
               </div>
-              <p class="text-gray-600 text-sm mb-3">13.3英寸超薄笔记本电脑，轻巧便携，性能强劲</p>
+              <p class="text-gray-600 text-sm mb-3">13.3" Ultra-thin laptop, lightweight and powerful performance</p>
               <div class="flex justify-between items-center">
                 <span class="text-primary font-bold text-xl">¥5,999</span>
                 <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-full transition-colors">
@@ -207,12 +207,12 @@
             </div>
           </div>
           
-          <!-- 产品卡片 2 -->
+          <!-- Product Card 2 -->
           <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
             <div class="relative">
-              <img src="https://picsum.photos/id/96/400/300" alt="智能手机" class="w-full h-48 object-cover">
+              <img src="https://picsum.photos/id/96/400/300" alt="Smartphone" class="w-full h-48 object-cover">
               <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
-                新品
+                New
               </div>
             </div>
             <div class="p-4">
@@ -226,7 +226,7 @@
                   <i class="fa fa-star-o"></i>
                 </div>
               </div>
-              <p class="text-gray-600 text-sm mb-3">6.7英寸全面屏，5000mAh电池，超清拍照</p>
+              <p class="text-gray-600 text-sm mb-3">6.7" Full-screen, 5000mAh battery, ultra-clear camera</p>
               <div class="flex justify-between items-center">
                 <span class="text-primary font-bold text-xl">¥4,299</span>
                 <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-full transition-colors">
@@ -236,12 +236,12 @@
             </div>
           </div>
           
-          <!-- 产品卡片 3 -->
+          <!-- Product Card 3 -->
           <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
             <div class="relative">
-              <img src="https://picsum.photos/id/119/400/300" alt="无线耳机" class="w-full h-48 object-cover">
+              <img src="https://picsum.photos/id/119/400/300" alt="Wireless Headphones" class="w-full h-48 object-cover">
               <div class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">
-                优惠
+                Sale
               </div>
             </div>
             <div class="p-4">
@@ -255,7 +255,7 @@
                   <i class="fa fa-star"></i>
                 </div>
               </div>
-              <p class="text-gray-600 text-sm mb-3">主动降噪无线耳机，HiFi音质，IP54防水</p>
+              <p class="text-gray-600 text-sm mb-3">Active noise cancellation, HiFi sound quality, IP54 waterproof</p>
               <div class="flex justify-between items-center">
                 <div>
                   <span class="text-primary font-bold text-xl">¥899</span>
@@ -268,10 +268,10 @@
             </div>
           </div>
           
-          <!-- 产品卡片 4 -->
+          <!-- Product Card 4 -->
           <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
             <div class="relative">
-              <img src="https://picsum.photos/id/100/400/300" alt="智能手表" class="w-full h-48 object-cover">
+              <img src="https://picsum.photos/id/100/400/300" alt="Smart Watch" class="w-full h-48 object-cover">
             </div>
             <div class="p-4">
               <div class="flex justify-between items-center mb-2">
@@ -284,7 +284,7 @@
                   <i class="fa fa-star-o"></i>
                 </div>
               </div>
-              <p class="text-gray-600 text-sm mb-3">多功能智能手表，健康监测，运动追踪</p>
+              <p class="text-gray-600 text-sm mb-3">Multi-functional smartwatch, health monitoring, sports tracking</p>
               <div class="flex justify-between items-center">
                 <span class="text-primary font-bold text-xl">¥1,499</span>
                 <button class="bg-primary hover:bg-primary/90 text-white p-2 rounded-full transition-colors">
@@ -297,58 +297,58 @@
       </div>
     </section>
 
-    <!-- 促销横幅 -->
+    <!-- Promotion Banner -->
     <section class="py-16 bg-primary relative overflow-hidden">
       <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-2xl">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">限时特惠活动</h2>
-          <p class="text-white/90 text-lg mb-8">全场商品8折起，新用户注册即送200元优惠券，数量有限，先到先得！</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Limited Time Special Offer</h2>
+          <p class="text-white/90 text-lg mb-8">Up to 20% off on all products. New users get ¥200 coupons upon registration. Limited stock, first come first served!</p>
           <div class="flex flex-wrap gap-4">
             <a href="#" class="bg-white text-primary hover:bg-white/90 font-medium px-6 py-3 rounded-lg transition-colors">
-              立即抢购
+              Shop Now
             </a>
             <a href="#" class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-medium px-6 py-3 rounded-lg transition-colors">
-              了解详情
+              Learn More
             </a>
           </div>
         </div>
       </div>
-      <!-- 装饰图形 -->
+      <!-- Decorative Elements -->
       <div class="absolute -top-10 -right-10 w-64 h-64 bg-white/10 rounded-full"></div>
       <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-white/10 rounded-full"></div>
     </section>
 
-    <!-- 关于我们 -->
+    <!-- About Us -->
     <section id="about" class="py-12">
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <img src="https://picsum.photos/id/180/600/400" alt="关于我们" class="w-full h-auto rounded-xl shadow-lg">
+            <img src="https://picsum.photos/id/180/600/400" alt="About Us" class="w-full h-auto rounded-xl shadow-lg">
           </div>
           <div>
-            <h2 class="text-3xl font-bold mb-4">关于 FotonFold</h2>
+            <h2 class="text-3xl font-bold mb-4">About FotonFold</h2>
             <p class="text-gray-700 mb-4">
-              FotonFold 成立于2018年，是一家专注于高品质电子产品销售的电商平台。我们致力于为消费者提供最新、最好的科技产品，让每个人都能享受科技带来的便捷与乐趣。
+              Founded in 2018, FotonFold is an e-commerce platform specializing in high-quality electronic products. We are committed to providing consumers with the latest and best tech products, enabling everyone to enjoy the convenience and fun brought by technology.
             </p>
             <p class="text-gray-700 mb-6">
-              我们的使命是通过技术创新和优质服务，连接人与科技，创造更美好的未来生活。我们与全球知名品牌合作，确保产品的品质和售后服务。
+              Our mission is to connect people with technology through innovation and excellent service, creating a better future. We cooperate with global leading brands to ensure product quality and after-sales service.
             </p>
             <div class="grid grid-cols-2 gap-4">
               <div class="flex items-center">
                 <i class="fa fa-check-circle text-primary text-xl mr-2"></i>
-                <span>正品保障</span>
+                <span>Authentic Guarantee</span>
               </div>
               <div class="flex items-center">
                 <i class="fa fa-check-circle text-primary text-xl mr-2"></i>
-                <span>7天无理由退换</span>
+                <span>7-Day Return Policy</span>
               </div>
               <div class="flex items-center">
                 <i class="fa fa-check-circle text-primary text-xl mr-2"></i>
-                <span>专业售后团队</span>
+                <span>Professional Support Team</span>
               </div>
               <div class="flex items-center">
                 <i class="fa fa-check-circle text-primary text-xl mr-2"></i>
-                <span>全国联保</span>
+                <span>National Warranty</span>
               </div>
             </div>
           </div>
@@ -356,12 +356,12 @@
       </div>
     </section>
 
-    <!-- 客户评价 -->
+    <!-- Customer Reviews -->
     <section class="py-12 bg-gray-50">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold mb-8 text-center">客户评价</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center">Customer Reviews</h2>
         <div class="grid md:grid-cols-3 gap-6">
-          <!-- 评价 1 -->
+          <!-- Review 1 -->
           <div class="bg-white rounded-xl shadow-md p-6 card-hover">
             <div class="flex text-yellow-400 mb-3">
               <i class="fa fa-star"></i>
@@ -371,18 +371,18 @@
               <i class="fa fa-star"></i>
             </div>
             <p class="text-gray-700 mb-4">
-              "购买的笔记本电脑性能非常出色，轻薄便携，续航也很长。客服态度很好，解答了我很多问题，非常满意这次购物体验！"
+              "The laptop I purchased has excellent performance, is lightweight and portable, and has a long battery life. The customer service team was very helpful, answering all my questions. I'm very satisfied with this shopping experience!"
             </p>
             <div class="flex items-center">
-              <img src="https://picsum.photos/id/64/100/100" alt="用户头像" class="w-12 h-12 rounded-full object-cover mr-3">
+              <img src="https://picsum.photos/id/64/100/100" alt="User Avatar" class="w-12 h-12 rounded-full object-cover mr-3">
               <div>
-                <h4 class="font-medium">张先生</h4>
-                <p class="text-gray-500 text-sm">2025年5月20日</p>
+                <h4 class="font-medium">Mr. Zhang</h4>
+                <p class="text-gray-500 text-sm">May 20, 2025</p>
               </div>
             </div>
           </div>
           
-          <!-- 评价 2 -->
+          <!-- Review 2 -->
           <div class="bg-white rounded-xl shadow-md p-6 card-hover">
             <div class="flex text-yellow-400 mb-3">
               <i class="fa fa-star"></i>
@@ -392,18 +392,18 @@
               <i class="fa fa-star-half-o"></i>
             </div>
             <p class="text-gray-700 mb-4">
-              "无线耳机音质很棒，降噪效果也很好，长时间佩戴也不会感到不适。物流速度很快，包装也很精美，值得推荐！"
+              "The wireless headphones have great sound quality and excellent noise cancellation. They're comfortable to wear for long periods. The delivery was fast and the packaging was精美. Highly recommended!"
             </p>
             <div class="flex items-center">
-              <img src="https://picsum.photos/id/65/100/100" alt="用户头像" class="w-12 h-12 rounded-full object-cover mr-3">
+              <img src="https://picsum.photos/id/65/100/100" alt="User Avatar" class="w-12 h-12 rounded-full object-cover mr-3">
               <div>
-                <h4 class="font-medium">李女士</h4>
-                <p class="text-gray-500 text-sm">2025年5月15日</p>
+                <h4 class="font-medium">Ms. Li</h4>
+                <p class="text-gray-500 text-sm">May 15, 2025</p>
               </div>
             </div>
           </div>
           
-          <!-- 评价 3 -->
+          <!-- Review 3 -->
           <div class="bg-white rounded-xl shadow-md p-6 card-hover">
             <div class="flex text-yellow-400 mb-3">
               <i class="fa fa-star"></i>
@@ -413,13 +413,13 @@
               <i class="fa fa-star-o"></i>
             </div>
             <p class="text-gray-700 mb-4">
-              "智能手表功能很全面，健康监测很准确，外观也很时尚。唯一不足的是电池续航有点短，不过总体来说还是很满意的。"
+              "The smartwatch has comprehensive functions, accurate health monitoring, and a stylish design. The only drawback is the battery life could be better, but overall I'm very satisfied."
             </p>
             <div class="flex items-center">
-              <img src="https://picsum.photos/id/91/100/100" alt="用户头像" class="w-12 h-12 rounded-full object-cover mr-3">
+              <img src="https://picsum.photos/id/91/100/100" alt="User Avatar" class="w-12 h-12 rounded-full object-cover mr-3">
               <div>
-                <h4 class="font-medium">王先生</h4>
-                <p class="text-gray-500 text-sm">2025年5月8日</p>
+                <h4 class="font-medium">Mr. Wang</h4>
+                <p class="text-gray-500 text-sm">May 8, 2025</p>
               </div>
             </div>
           </div>
@@ -427,31 +427,31 @@
       </div>
     </section>
 
-    <!-- 订阅区域 -->
+    <!-- Newsletter -->
     <section class="py-16 bg-primary">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold text-white mb-4">订阅我们的新闻资讯</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">Subscribe to Our Newsletter</h2>
         <p class="text-white/90 mb-8 max-w-2xl mx-auto">
-          及时获取最新产品信息、促销活动和科技资讯
+          Stay updated with the latest product information, promotions, and tech news
         </p>
         <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-          <input type="email" placeholder="输入您的邮箱地址" class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white">
+          <input type="email" placeholder="Enter your email address" class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-white">
           <button type="submit" class="bg-secondary hover:bg-secondary/90 text-white font-medium px-6 py-3 rounded-lg transition-colors">
-            立即订阅
+            Subscribe Now
           </button>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- 页脚 -->
+  <!-- Footer -->
   <footer class="bg-dark text-white pt-12 pb-6">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         <div>
           <h3 class="text-xl font-bold mb-4">FotonFold</h3>
           <p class="text-gray-400 mb-4">
-            连接人与科技，创造美好未来
+            Connecting People with Technology
           </p>
           <div class="flex space-x-4">
             <a href="#" class="text-gray-400 hover:text-white transition-colors">
@@ -470,33 +470,33 @@
         </div>
         
         <div>
-          <h4 class="font-bold mb-4">快速链接</h4>
+          <h4 class="font-bold mb-4">Quick Links</h4>
           <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
-            <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">商品分类</a></li>
-            <li><a href="#featured" class="text-gray-400 hover:text-white transition-colors">热销产品</a></li>
-            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+            <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Categories</a></li>
+            <li><a href="#featured" class="text-gray-400 hover:text-white transition-colors">Featured</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
           </ul>
         </div>
         
         <div>
-          <h4 class="font-bold mb-4">客户服务</h4>
+          <h4 class="font-bold mb-4">Customer Service</h4>
           <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">配送政策</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">退换货政策</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">隐私政策</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">用户协议</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Shipping Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Return Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
           </ul>
         </div>
         
         <div>
-          <h4 class="font-bold mb-4">联系我们</h4>
+          <h4 class="font-bold mb-4">Contact Us</h4>
           <ul class="space-y-2">
             <li class="flex items-start">
               <i class="fa fa-map-marker mt-1 mr-3 text-gray-400"></i>
-              <span class="text-gray-400">北京市海淀区中关村科技园区8号楼</span>
+              <span class="text-gray-400">Building 8, Zhongguancun Science Park, Haidian District, Beijing</span>
             </li>
             <li class="flex items-center">
               <i class="fa fa-phone mr-3 text-gray-400"></i>
@@ -513,26 +513,26 @@
       <div class="border-t border-gray-800 pt-6">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-gray-500 text-sm mb-4 md:mb-0">
-            &copy; 2025 FotonFold. 保留所有权利.
+            &copy; 2025 FotonFold. All rights reserved.
           </p>
           <div class="flex space-x-4">
-            <img src="https://picsum.photos/id/180/50/30" alt="支付方式" class="h-8 w-auto rounded">
-            <img src="https://picsum.photos/id/181/50/30" alt="支付方式" class="h-8 w-auto rounded">
-            <img src="https://picsum.photos/id/182/50/30" alt="支付方式" class="h-8 w-auto rounded">
-            <img src="https://picsum.photos/id/183/50/30" alt="支付方式" class="h-8 w-auto rounded">
+            <img src="https://picsum.photos/id/180/50/30" alt="Payment Method" class="h-8 w-auto rounded">
+            <img src="https://picsum.photos/id/181/50/30" alt="Payment Method" class="h-8 w-auto rounded">
+            <img src="https://picsum.photos/id/182/50/30" alt="Payment Method" class="h-8 w-auto rounded">
+            <img src="https://picsum.photos/id/183/50/30" alt="Payment Method" class="h-8 w-auto rounded">
           </div>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- 回到顶部按钮 -->
+  <!-- Back to Top Button -->
   <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary hover:bg-primary/90 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible">
     <i class="fa fa-arrow-up"></i>
   </button>
 
   <script>
-    // 移动端菜单切换
+    // Mobile Menu Toggle
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
@@ -540,7 +540,7 @@
       mobileMenu.classList.toggle('hidden');
     });
     
-    // 回到顶部按钮
+    // Back to Top Button
     const backToTopButton = document.getElementById('back-to-top');
     
     window.addEventListener('scroll', () => {
@@ -560,7 +560,7 @@
       });
     });
     
-    // 平滑滚动
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -570,12 +570,12 @@
         
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-          // 关闭移动菜单（如果打开）
+          // Close mobile menu if open
           if (!mobileMenu.classList.contains('hidden')) {
             mobileMenu.classList.add('hidden');
           }
           
-          // 滚动到目标位置
+          // Scroll to target
           targetElement.scrollIntoView({
             behavior: 'smooth'
           });
